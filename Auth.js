@@ -6,6 +6,8 @@ import Home from './componenet/Main/Home';
 import Profile from './componenet/Main/Profile';
 import SplashScreen from './componenet/intro/SplashScreen';
 import Onboarding from './componenet/intro/Onboarding';
+import SignUp from './componenet/intro/SignUp';
+import Login from './componenet/intro/Login';
 
 
 const Stack = createStackNavigator();
@@ -25,9 +27,11 @@ function Auth() {
     return(
         <NavigationContainer>
       <Stack.Navigator>
-      <Stack.Screen name="SplashScreen" component={SplashScreen} />
+      <Stack.Screen name="SplashScreen" component={SplashScreen} options={{ headerShown: false }}/>
         <Stack.Screen name="TabGroup" component={TabGroup} options={{ headerShown: false }} />
-        <Stack.Screen name="Onboarding" component={Onboarding} />
+        <Stack.Screen name="Onboarding" component={Onboarding} options={{ headerShown: false }} />
+        <Stack.Screen name="SignUp" component={SignUp} options={{ headerShown: false }} />
+        <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
         </Stack.Navigator>
     </NavigationContainer>
     )
