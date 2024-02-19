@@ -15,7 +15,7 @@ const Input = ({
   return(
      <View style={{marginBottom:20}}>
         <Text style={{marginVertical:5, fontSize:14, color:'#12121290', fontWeight:700, marginVertical:10}}>{label}</Text>
-        <View style={[styles.InputContainer,{borderColor:error ? '#B40404': isFocused ? '#6684D2' : '#ffff'}]}>
+        <View style={[styles.InputContainer,{borderColor: error ? '#B40404': isFocused ? '#6684D2' : '#ffff'}]}>
             
             <TextInput 
             secureTextEntry={password}

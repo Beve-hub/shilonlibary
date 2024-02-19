@@ -1,7 +1,7 @@
 import { View, Text,StyleSheet, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { StatusBar } from 'expo-status-bar';
-import { widthPercentageToDP as wp } from 'react-native-responsive-screen';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 const Onboarding = ({ navigation }) => {
   return (
@@ -48,6 +48,7 @@ const styles = StyleSheet.create({
   },
   signup: {
     width: wp(80),
+    height: hp(5),
     elevation: 10, 
     marginTop:10, 
     flexDirection: 'row',
