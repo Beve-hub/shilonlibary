@@ -26,12 +26,12 @@ const styles = StyleSheet.create({
     backgroundColor: '#6684D2'
   },
   image: {
-    width: 100,
-    height: 100,
+    width: 80,
+    height: 80,
     resizeMode: 'contain',
   },
   hero: {
-    fontSize: 20,
+    fontSize: 30,
     color: '#fff',
     fontWeight: 'bold',
     paddingVertical: 10

@@ -8,8 +8,11 @@ const Onboarding = ({ navigation }) => {
     <View  style={styles.container}>
        <StatusBar style="dark" />
        <Image source={require('../../assets/land4.png')} style={styles.image} />
+
+       
        <Text style={styles.hero}>Welcome</Text>
        <Text style={styles.herosub}> Read, Listen and Create Note.</Text>
+ 
 
        <View style={{position:'absolute', bottom:70}}>
        <TouchableOpacity onPress={() => navigation.replace('SignUp')}  style={styles.signup}>
@@ -33,14 +36,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   image: {
-    width: 200,
-    height: 200,
+    width: 280,
+    height: 280,
     resizeMode: 'contain',
   },
   hero: {
     fontSize: 28,
         fontWeight: 'bold',
-    paddingTop: 20
+    marginTop: 140
   },
   herosub: {
     fontSize: 15,
