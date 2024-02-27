@@ -4,6 +4,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import Input from '../data/Input';
 import Button from '../data/Button';
 import Loader from '../data/Loader';
+import { StatusBar } from "expo-status-bar";
 
 const SignUp = ({ navigation }) => {
   const [inputs, setInputs] = useState({
@@ -67,6 +68,7 @@ const SignUp = ({ navigation }) => {
 
   return (
     <SafeAreaView>
+       <StatusBar style="dark" />
       <Loader visible={loading} />
       <ScrollView
         contentContainerStyle={{

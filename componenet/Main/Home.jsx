@@ -21,7 +21,7 @@ const Home = ({ navigation }) => {
   return (
     <SafeAreaView style={{ marginHorizontal: 20 }}>
      
-        <StatusBar style="d     ark" />
+        <StatusBar style="dark" />
         <View
           style={{
             flexDirection: "row",
@@ -32,10 +32,11 @@ const Home = ({ navigation }) => {
           }}
         >
           <Text style={{ fontWeight: "bold", fontSize: 20 }}>Discoveries</Text>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('Notification')}>
             <Ionicons name="notifications-outline" size={24} color="black" />
           </TouchableOpacity>
         </View>
+
         <ScrollView 
         showsVerticalScrollIndicator={false}
         style={{
@@ -47,7 +48,7 @@ const Home = ({ navigation }) => {
             backgroundColor: "#6684D2",
             width: wp(89),
             height: hp(10),
-            marginTop: 20,
+            marginTop: 10,
             borderRadius: 20,
             justifyContent: "space-between",
             alignItems: "center",
@@ -83,22 +84,22 @@ const Home = ({ navigation }) => {
         </View>
 
         {/*image slider */}
-        <View style={{backgroundColor:'#E0E0E0', width:wp(89), padding:10, borderRadius:10, marginTop:20 }}>
+        <View style={{backgroundColor:'#E0E0E0', width:wp(89), padding:10, borderRadius:10, marginTop:20,marginBottom:20 }}>
           <View style={{marginBottom:10,}}>
-          <Text style={{fontSize:20, fontWeight:'bold'}}>New Arrivals</Text>
-          <Text style={{fontSize:14, fontWeight:'light',color:'#12121270'}}>26 Books Added</Text>
+          <Text style={{fontSize:16, fontWeight:'bold'}}>New Arrivals</Text>
+          <Text style={{fontSize:12, fontWeight:'light',color:'#12121270'}}>26 Books Added</Text>
           </View>
-          <ImageSlider />
+          <ImageSlider navigation={navigation}/>
         </View>
 
         {/*book slider */}
-        <View style={{ marginTop:20 }}>       
-          <BooksSlider/>
+        <View style={{ marginTop:20,marginBottom:20, }}>       
+          <BooksSlider navigation={navigation}/>
         </View>
 
         {/*book slider */}
         <View style={{ marginTop:20, marginBottom:30, }}>       
-          <Recomended/>
+          <Recomended navigation={navigation}/>
         </View>
     
 

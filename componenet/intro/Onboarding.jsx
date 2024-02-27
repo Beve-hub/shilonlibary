@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
   hero: {
     fontSize: 28,
         fontWeight: 'bold',
-    marginTop: 140
+    marginTop: 50
   },
   herosub: {
     fontSize: 15,

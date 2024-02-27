@@ -50,7 +50,7 @@ const Login = ({ navigation }) => {
               'user', 
               JSON.stringify({ ...parsedUserData, loggedIn: true })
             );
-            navigation.navigate('Profile');
+            ;
           } else {
             Alert.alert('Error', 'Invalid email or password');
           }

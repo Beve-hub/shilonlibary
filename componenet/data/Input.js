@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { View, Text, TextInput, StyleSheet, } from "react-native";
-import { AntDesign } from '@expo/vector-icons';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 const Input = ({
   label,
@@ -30,10 +30,12 @@ const Input = ({
             }}
             {...props}
             />
+            <Icon name={iconName} style={{fontSize:20,color:'#12121220', marginLeft:90 }}/>
         </View>
         {error && (
             <Text style={{color:'#B40404' }}>{error}</Text>
         )}
+
      </View>
      );
 };

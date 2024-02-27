@@ -14,6 +14,11 @@ import { Ionicons } from '@expo/vector-icons';
 import { FontAwesome6 } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
+import PopularBooks from './componenet/Main/PopularBooks';
+import PopularSlider from './componenet/Main/PopularSlider';
+import Recomended from './componenet/Main/Recomended';
+import RecomBooks from './componenet/Main/RecomBooks';
+import Notification from './componenet/Main/Notification';
 
 const Stack = createStackNavigator();
 const Tab = createMaterialBottomTabNavigator();
@@ -91,8 +96,11 @@ function Auth() {
         <Stack.Screen name="Onboarding" component={Onboarding} options={{ headerShown: false }} />
         <Stack.Screen name="SignUp" component={SignUp} options={{ headerShown: false }} />
         <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
-        
-
+        <Stack.Screen name="PopularBooks" component={PopularBooks} options={{ headerShown: false }} />
+        <Stack.Screen name="PopularSlider" component={PopularSlider} options={{ headerShown: false }} />
+        <Stack.Screen name="Recomended" component={Recomended} options={{ headerShown: false }} />
+        <Stack.Screen name="RecomBooks" component={RecomBooks} options={{ headerShown: false }} />
+        <Stack.Screen name="Notification" component={Notification} options={{ headerShown: false }} />
         </Stack.Navigator>
     </NavigationContainer>
     )

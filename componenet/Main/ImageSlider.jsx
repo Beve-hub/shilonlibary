@@ -1,4 +1,4 @@
-import { View, Text, Image } from 'react-native'
+import { View, Text, Image, TouchableOpacity } from 'react-native'
 import React, { useRef } from 'react';
 import Carousel from 'react-native-snap-carousel';
 import { sliderImages } from '../../constant';
@@ -13,7 +13,9 @@ const ImageSlider = () => {
     const ItemCard = ({ item, index }) => {
         return (
             <View >
-                 <Image source={item} alt="" style={{resizeMode:'contain'}}/>                               
+                <TouchableOpacity activeOpacity={0.7}>
+                 <Image source={item} alt="" style={{resizeMode:'contain',  width: 200, height:200,paddingVertical:30}}/>                 
+                 </TouchableOpacity>              
             </View>
         );
     };
