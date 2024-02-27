@@ -89,3 +89,31 @@ export const recomendBooks = [
 
 ]
 
+export const DATA = [
+    {
+        name: 'Cal Newport',
+        title: 'Deep Work',
+        image: require('../assets/rec 2.png')
+    },
+    {
+        name: 'Angela Morrison',
+        title: 'Ling Me To Sleep',
+        image:require('../assets/rec 4.png')
+    },
+    {
+        name: 'Selina O Grinde',
+        title: 'And Man Created GOD',
+        image: require('../assets/change 5.png')
+    },
+    {
+        name: 'Steve Harvey',
+        title: 'Act Like Success',
+        image: require('../assets/rec 3.png')
+    },
+    {
+        name: 'sheradsromance',
+        title: 'BLACK ROMANCE BOOK',
+        image: require('../assets/rec 5.png')
+    },
+  
+  ]
