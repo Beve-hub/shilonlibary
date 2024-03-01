@@ -12,20 +12,25 @@ const Search = () => {
   const searchFunction = async (text) => {
     setSearchValue(text);
     await fetchedData();
-    filterData(data, activeCategory); // Call filterData after data has been fetched
+    filterData(data, activeCategory); 
   };
   
  
   const fetchedData = async () => {
     try {
       const API_KEY = 'AIzaSyCQuaWYBXVyBT7ujf6vva21bdLim_pqn-M';
-      const response = await axios.get(`https://www.googleapis.com/books/v1/volumes?q=${searchValue}&filter=free-ebooks&key=${API_KEY}`);
-      const fetchedData = response.data.items.map(item => ({
-        name: item.volumeInfo.authors ? item.volumeInfo.authors[0] : "Unknown",
-        title: item.volumeInfo.title,
-        image: item.volumeInfo.imageLinks ? { uri: item.volumeInfo.imageLinks.thumbnail } : require("../../assets/adaptive-icon.png")
-      }));
-      filterData(fetchedData, activeCategory);
+      const response = await axios.get(`https://www.googleapis.com/books/v1/volumes?q=flowers&filter=free-ebooks&key=${API_KEY}`);
+      if ( response.length !== 0 ) {
+        /*console.log(response)*/
+        const fetchedData = response.data.items.map(item => ({
+          name: item.volumeInfo.authors ? item.volumeInfo.authors[0] : "Unknown",
+          title: item.volumeInfo.title,
+          image: item.volumeInfo.imageLinks ? { uri: item.volumeInfo.imageLinks.thumbnail } : require("../../assets/adaptive-icon.png")
+        }));
+        console.log(fetchedData)
+        setData(fetchedData)
+        filterData(fetchedData, activeCategory);
+      } else {console.log(response)}
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -89,16 +94,18 @@ const Search = () => {
           </View>
         </View>
       </View>
-      {searchValue !== "" && (
+     
         <ScrollView>
+          {console.log('welcome inside the flatlist ; ',data)}
           <FlatList
             data={data}
-            keyExtractor={(item) => item.name}
-            renderItem={({ item }) => <Item item={item} />}
-            contentContainerStyle={{ gap: 10, paddingHorizontal: 12, marginBottom: 150, marginTop: 10 }}
+            renderItem={({ item }) => <Item item={item} key={item.id} />}
+            keyExtractor={(item) => item.id}            
+            contentContainerStyle={{ gap: 10, paddingHorizontal: 12, marginBottom: 150, marginTop: 10 }}            
           />
+        
         </ScrollView>
-      )}
+      
     </SafeAreaView>
   );
 };
@@ -107,7 +114,7 @@ const Item = ({ item }) => {
   return (
     <View style={{ backgroundColor: '#E0E0E0', borderRadius: 20, padding: 10, gap: 20 }}>
       <TouchableOpacity style={{ flexDirection: 'row', alignItems: 'center' }}>
-        <Image source={item.image} style={{ resizeMode: 'contain', width: 80, height: 80, paddingVertical: 30 }} />
+        <Image source={item.image ['uri']} style={{ resizeMode: 'contain', width: 80, height: 80, paddingVertical: 30 }} />
         <View>
           <Text style={{ fontWeight: 'bold', fontSize: 16 }}>{item.title}</Text>
           <Text style={{ fontSize: 12, color: "#12121250" }}>{item.name}</Text>
