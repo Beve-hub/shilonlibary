@@ -19,6 +19,11 @@ import PopularSlider from './componenet/Main/PopularSlider';
 import Recomended from './componenet/Main/Recomended';
 import RecomBooks from './componenet/Main/RecomBooks';
 import Notification from './componenet/Main/Notification';
+import Live from './componenet/Main/Live';
+import Messages from './componenet/Main/Messages';
+import Support from './componenet/Main/Support';
+import Settings from './componenet/Main/Settings';
+
 
 const Stack = createStackNavigator();
 const Tab = createMaterialBottomTabNavigator();
@@ -101,6 +106,10 @@ function Auth() {
         <Stack.Screen name="Recomended" component={Recomended} options={{ headerShown: false }} />
         <Stack.Screen name="RecomBooks" component={RecomBooks} options={{ headerShown: false }} />
         <Stack.Screen name="Notification" component={Notification} options={{ headerShown: false }} />
+        <Stack.Screen name="Live" component={Live} options={{ headerShown: false }} />
+        <Stack.Screen name="Messages" component={Messages} options={{ headerShown: false }} />
+        <Stack.Screen name="Support" component={Support} options={{ headerShown: false }} />
+        <Stack.Screen name="Settings" component={Settings} options={{ headerShown: false }} />
         </Stack.Navigator>
     </NavigationContainer>
     )

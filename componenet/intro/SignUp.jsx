@@ -11,6 +11,8 @@ const SignUp = ({ navigation }) => {
     email: '',
     fullName: '',
     password: '',
+    country: '', 
+    state: '',
   });
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
@@ -98,6 +100,18 @@ const SignUp = ({ navigation }) => {
             onChangeText={(text) => handleOnChange(text, 'email')} />
 
           <Input
+            label="Country" 
+            placeholder="Country"
+            error={errors.country} 
+            onChangeText={(text) => handleOnChange(text, 'country')} /> 
+
+          <Input
+            label="State" 
+            placeholder="State"
+            error={errors.state} 
+            onChangeText={(text) => handleOnChange(text, 'state')} />
+
+          <Input
             label="Password"
             placeholder="Password"
             error={errors.password}
@@ -106,6 +120,8 @@ const SignUp = ({ navigation }) => {
             }}
             onChangeText={(text) => handleOnChange(text, 'password')}
             password />
+
+          
 
           <Button title="Continue" onPress={validate} />
           <Text style={{ textAlign: 'center', fontSize: 16 }}>Already have an account? <Text onPress={() => navigation.navigate('Login')} style={{ fontWeight: '700', color: '#6684D2' }}> Sign In </Text> </Text>
