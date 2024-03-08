@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect, useState} from 'react';
 import { 
     View, 
     Text, 
@@ -6,10 +6,36 @@ import {
     Image, 
     FlatList 
 } from "react-native";
+import axios from "axios";
 
-import { sliderBooks } from "../../constant/index.js";
+
 
 const PopularSlider = ({ navigation }) => {
+    const [list, setList] = useState([]);
+
+    useEffect(() => {
+      const API_KEY = 'AIzaSyCQuaWYBXVyBT7ujf6vva21bdLim_pqn-M';
+        const url = `https://www.googleapis.com/books/v1/volumes?q=flowers&filter=free-ebooks&key=${API_KEY}`;
+
+        const fetchData = async () => {
+            try {
+                const resp = await axios.get(url);
+                if (resp.data.items.length === 0) {
+                    console.log("No data found");
+                } else {
+                    const data = resp.data.items.map(item => ({
+                        name: item.volumeInfo.authors ? item.volumeInfo.authors[0] : "Unknown",
+                        title: item.volumeInfo.title,
+                        image: item.volumeInfo.imageLinks ? { uri: item.volumeInfo.imageLinks.thumbnail } : require("../../assets/adaptive-icon.png")
+                    }));
+                    setList(data);
+                }
+            } catch (error) {
+                console.error("Error fetching data", error);
+            }
+        };
+        fetchData();
+    }, []);
 
 
     return (
@@ -26,7 +52,7 @@ const PopularSlider = ({ navigation }) => {
 
             <FlatList
                 horizontal={true}
-                data={sliderBooks}
+                data={list}
                 keyExtractor={item => item.name}
                 showsHorizontalScrollIndicator={false}
                 contentContainerStyle={{ gap: 30, paddingHorizontal: 12 }}

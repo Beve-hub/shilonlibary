@@ -10,22 +10,14 @@ const PopularBooks = ({ navigation }) => {
     <SafeAreaView>
         
         <View
-          style={{
-            flexDirection: "row",
-            alignItems:'center',
-            marginTop: 40,
-            padding:10,
-            gap:20
-          }}
-        >
+          style={{ flexDirection: "row", alignItems:'center', marginTop: 40,padding:10, gap:20 }}>
             <TouchableOpacity onPress={() => navigation.navigate('TabGroup')} style={{ fontWeight: "bold", fontSize: 20, backgroundColor:'#E0E0E0', padding:5, borderRadius:30 }}>
-            <Text    > <AntDesign name="arrowleft" size={24} color="black" /></Text>
-                </TouchableOpacity>
-            
-           
-          <Text style={{ fontWeight: "bold", fontSize: 20 }}>Popular Book</Text>
-        
+            <Text> <AntDesign name="arrowleft" size={24} color="black" /></Text>
+            </TouchableOpacity>                    
+          <Text style={{ fontWeight: "bold", fontSize: 20 }}>Popular Book</Text>     
         </View>
+
+        
         <ScrollView>
          <FlatList
                 numColumns={2}
