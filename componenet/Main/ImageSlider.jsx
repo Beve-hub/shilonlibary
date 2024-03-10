@@ -7,13 +7,13 @@ import {
 } from "react-native-responsive-screen";
 import axios from "axios";
 
-const ImageSlider = () => {
+const ImageSlider = ({navigation}) => {
     const carouselRef = useRef(null);
     const [list, setList] = useState([]);
 
     useEffect(() => {
       const API_KEY = 'AIzaSyCQuaWYBXVyBT7ujf6vva21bdLim_pqn-M';
-        const url = `https://www.googleapis.com/books/v1/volumes?q=flowers&filter=free-ebooks&key=${API_KEY}`;
+        const url = `https://www.googleapis.com/books/v1/volumes?q=flowers&orderBy=newest&key=${API_KEY}`;
 
         const fetchData = async () => {
             try {
@@ -35,10 +35,10 @@ const ImageSlider = () => {
         fetchData();
     }, []);
 
-    const ItemCard = ({ item, index }) => {
+    const ItemCard = ({ item, navigation }) => {
         return (
             <View>
-                <TouchableOpacity activeOpacity={0.7}>
+                <TouchableOpacity activeOpacity={0.7} onPress={() => navigation.replace('BookDetails', {...item})}>
                     <Image source={item.image} alt="" style={{ resizeMode: 'contain', width: 200, height: 200, paddingVertical: 30 }} />
                 </TouchableOpacity>
             </View>
@@ -52,7 +52,7 @@ const ImageSlider = () => {
             layout={'stack'}
             layoutCardOffset={`25`}
             autoplay={false}
-            renderItem={({ item }) => <ItemCard item={item} key={item.title} />} // Added key prop
+            renderItem={({ item }) => <ItemCard item={item} key={item.title} navigation={navigation}/>} // Added key prop
             sliderWidth={wp(100)}
             firstItem={1}
             itemWidth={wp(100) - 70}

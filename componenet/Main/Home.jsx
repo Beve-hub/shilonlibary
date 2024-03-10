@@ -14,8 +14,9 @@ import {
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
 import ImageSlider from "./ImageSlider";
-import BooksSlider from "./PopularSlider";
+import PopularSlider from "./PopularSlider";
 import Recomended from './Recomended';
+
 
 const Home = ({ navigation }) => {
   return (
@@ -53,8 +54,7 @@ const Home = ({ navigation }) => {
             justifyContent: "space-between",
             alignItems: "center",
             paddingHorizontal: 15,
-          }}
-        >
+          }}>
           <View>
             <Text style={{ color: "#fff", fontSize: 16, fontWeight: "bold" }}>
               Book for the Week
@@ -93,12 +93,12 @@ const Home = ({ navigation }) => {
         </View>
 
         {/*book slider */}
-        <View style={{ marginTop:20,marginBottom:20, }}>       
-          <BooksSlider navigation={navigation}/>
+        <View style={{ marginTop:20, }}>       
+          <PopularSlider navigation={navigation}/>
         </View>
 
         {/*book slider */}
-        <View style={{ marginTop:20, marginBottom:30, }}>       
+        <View style={{ marginTop:10, marginBottom:30, }}>       
           <Recomended navigation={navigation}/>
         </View>
     

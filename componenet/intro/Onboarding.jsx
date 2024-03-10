@@ -51,12 +51,12 @@ const styles = StyleSheet.create({
   },
   signup: {
     width: wp(80),
-    height: hp(5),
+    
     elevation: 10, 
     marginTop:10, 
     flexDirection: 'row',
      backgroundColor:'#6684D2', 
-    paddingVertical: 9, 
+    paddingVertical: 10, 
      display:'flex', 
     justifyContent:'center', 
     borderRadius:10  
@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
    borderColor:'#6684D2', 
    borderWidth:1,
-   paddingVertical: 9,
+   paddingVertical: 10,
     display:'flex',
    justifyContent:'center', 
   borderRadius:10  

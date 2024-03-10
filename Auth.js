@@ -23,6 +23,8 @@ import Live from './componenet/Main/Live';
 import Messages from './componenet/Main/Messages';
 import Support from './componenet/Main/Support';
 import Settings from './componenet/Main/Settings';
+import BookDetails from './componenet/Main/BookDetails';
+
 
 
 const Stack = createStackNavigator();
@@ -110,6 +112,7 @@ function Auth() {
         <Stack.Screen name="Messages" component={Messages} options={{ headerShown: false }} />
         <Stack.Screen name="Support" component={Support} options={{ headerShown: false }} />
         <Stack.Screen name="Settings" component={Settings} options={{ headerShown: false }} />
+        <Stack.Screen name="BookDetails" component={BookDetails} options={{ headerShown: false }} />
         </Stack.Navigator>
     </NavigationContainer>
     )
